@@ -9,7 +9,6 @@ public class PlayerUiInput : InputBase, Iinput
     private enum ButtonType { HorizontalButton, JumpButton }
 
 
-
     public int GetJumpValue()
     {
         return jumpValue;

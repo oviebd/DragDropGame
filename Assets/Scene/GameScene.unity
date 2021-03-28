@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 1
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -767,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 0
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -1049,6 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 3
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -1367,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 2
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -1618,6 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 0
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -1793,6 +1798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 0
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -1860,6 +1866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 238701921}
+  - {fileID: 1753112721}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1878,7 +1885,7 @@ GameObject:
   - component: {fileID: 1466894622}
   - component: {fileID: 1466894621}
   m_Layer: 9
-  m_Name: Jumpper item
+  m_Name: Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2000,6 +2007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 4
   isItPlacedOnGround: 1
   layerMask:
     serializedVersion: 2
@@ -2241,6 +2249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfde12a7225c324698b164aabf2338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 0
   isItPlacedOnGround: 0
   layerMask:
     serializedVersion: 2
@@ -2323,6 +2332,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660053088}
   m_CullTransparentMesh: 0
+--- !u!1 &1753112720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753112721}
+  - component: {fileID: 1753112722}
+  m_Layer: 0
+  m_Name: Drag Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1753112721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753112720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1443183208}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753112722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753112720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573a73ff0fc38d74aaf0088c0d971bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggerList:
+  - {fileID: 952484554}
+  - {fileID: 189674429}
+  - {fileID: 1076199276}
+  - {fileID: 1466894624}
 --- !u!1 &1768669944
 GameObject:
   m_ObjectHideFlags: 0

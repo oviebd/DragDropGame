@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Dragger : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
+	public EnumUtility.InputType inputType;
 
-
-    public delegate void OnDraggingStarted(bool isDragging);
+    public delegate void OnDraggingStarted(bool isDragging,EnumUtility.InputType inputType);
     public static event OnDraggingStarted OnDraggingValueChanged;
+	private bool _canDraggable = true;
 
-    public bool isItPlacedOnGround = false;
+	public bool isItPlacedOnGround = false;
     public LayerMask layerMask = new LayerMask();
 
     private bool _isColliding = false;
     private Vector3 _initialPosition;
     private Collider2D _collider2D;
     private GameObject _lastCollidedObj;
+
+	
 
     private void Awake()
     {
@@ -26,13 +29,19 @@ public class Dragger : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragH
 
     public void OnDrag(PointerEventData eventData)
     {
-        OnDraggingValueChanged?.Invoke(true);
+		if (_canDraggable == false)
+			return;
+
+        OnDraggingValueChanged?.Invoke(true,inputType);
         transform.position = eventData.pointerCurrentRaycast.worldPosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        OnDraggingValueChanged?.Invoke(false);
+		if (_canDraggable == false)
+			return;
+
+		OnDraggingValueChanged?.Invoke(false,inputType);
        // _collider2D.isTrigger = false;
 
         if (_isColliding == true)
@@ -69,8 +78,11 @@ public class Dragger : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _collider2D.isTrigger = true;
-        OnDraggingValueChanged?.Invoke(true);
+		if (_canDraggable == false)
+			return;
+
+		_collider2D.isTrigger = true;
+        OnDraggingValueChanged?.Invoke(true,inputType);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -92,11 +104,17 @@ public class Dragger : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragH
         return false;
     }
 
+	public void SetDragAbility(bool canDrag)
+	{
+		_canDraggable = canDrag;
+	}
+
     private void GoBackToButtonState()
     {
         this.transform.position = _initialPosition;
         _collider2D.isTrigger = true;
         _lastCollidedObj = null;
+		InputDragManager.instance.OnDragItemReachedInitialPosition();
     }
 
     private void GoBackToGameItemState()

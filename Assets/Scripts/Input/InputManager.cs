@@ -9,10 +9,6 @@ public class InputManager : MonoBehaviour
 	public static InputManager instance;
 
 	private Iinput _playerKeyBoardInput;
-	private Iinput _playerUiInput;
-
-	//public Dragger dragger;
-
 	private bool _isDragging = false;
 
 	private void Awake()
@@ -22,21 +18,21 @@ public class InputManager : MonoBehaviour
 			instance = this;
 		}
 
-		Dragger.OnDraggingValueChanged += OnDraggingValueChanged;
+		DraggableItem.OnDraggingValueChanged += OnDraggingValueChanged;
 	}
 
 	private void Start()
 	{
 		_playerKeyBoardInput = GetComponent<PlayerKeyBoardInput>();
-		_playerUiInput = GetComponent<PlayerUiInput>();
+	  //_playerUiInput = GetComponent<PlayerUiInput>();
 	}
 
     private void OnDestroy()
     {
-		Dragger.OnDraggingValueChanged -= OnDraggingValueChanged;
+		DraggableItem.OnDraggingValueChanged -= OnDraggingValueChanged;
 	}
 
-    private void OnDraggingValueChanged(bool isDragging)
+    private void OnDraggingValueChanged(bool isDragging,EnumUtility.InputType inputType)
     {
 		this._isDragging = isDragging;
     }
@@ -47,11 +43,11 @@ public class InputManager : MonoBehaviour
 		{
 			return 0;
 		}
-
-		if (_playerKeyBoardInput.GetHorizontalValue() != 0)
+		return _playerKeyBoardInput.GetHorizontalValue();
+		/*if (_playerKeyBoardInput.GetHorizontalValue() != 0)
 			return _playerKeyBoardInput.GetHorizontalValue();
 		else
-			return _playerUiInput.GetHorizontalValue();
+			return _playerUiInput.GetHorizontalValue();*/
 	}
 
 	public bool IsJumpButtonPressed()
@@ -61,7 +57,7 @@ public class InputManager : MonoBehaviour
 			return false;
         }
 
-		if (_playerKeyBoardInput.GetJumpValue() == 0 && _playerUiInput.GetJumpValue() == 0)
+		if (_playerKeyBoardInput.GetJumpValue() == 0 )
 			return false;
 		else
 			return true;
