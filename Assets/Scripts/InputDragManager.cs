@@ -46,6 +46,7 @@ public class InputDragManager : MonoBehaviour
 	}
 	public void OnDragItemReachedInitialPosition()
 	{
+		_activeDraggedItem = EnumUtility.InputType.NONE;
 		for (int i = 0; i < draggerList.Count; i++)
 		{
 			draggerList[i].SetDragAbility(true);

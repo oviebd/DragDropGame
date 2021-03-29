@@ -40,10 +40,14 @@ public class InputManager : MonoBehaviour
 	public int GetHorizontalValue()
 	{
 		if (this._isDragging == true)
-		{
 			return 0;
-		}
+
 		int horizontalValue = _playerKeyBoardInput.GetHorizontalValue();
+		if (horizontalValue == 1 && InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.InputType.RIGHT)
+			return 0;
+
+		if (horizontalValue == -1 && InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.InputType.LEFT)
+			return 0;
 
 		return _playerKeyBoardInput.GetHorizontalValue();
 		/*if (_playerKeyBoardInput.GetHorizontalValue() != 0)
