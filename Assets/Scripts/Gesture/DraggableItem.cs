@@ -42,7 +42,13 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 			return;
 
 		OnDraggingValueChanged?.Invoke(false,inputType);
-       // _collider2D.isTrigger = false;
+		// _collider2D.isTrigger = false;
+
+		if (CanDockToInitialPosition(eventData.pointerCurrentRaycast.worldPosition))
+		{
+			GoBackToButtonState();
+			return;
+		}
 
         if (_isColliding == true)
         {
@@ -61,7 +67,6 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
                 GoBackToButtonState();
                 return;
             }
-
         }
         else
         {
@@ -75,7 +80,6 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
             }
         }
     }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
 		if (_canDraggable == false)
@@ -96,6 +100,17 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         _isColliding = false;
         
     }
+
+	private bool CanDockToInitialPosition(Vector3 position)
+	{
+		float distance = Vector3.Magnitude(position - _initialPosition);
+
+		//Debug.Log("Distance is " + distance);
+		if (distance <= 1.5)
+			return true;
+
+		return false;
+	}
 
     public bool IsThisLayerCollidable(GameObject collidedObj)
     {

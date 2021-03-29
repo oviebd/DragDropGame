@@ -43,6 +43,8 @@ public class InputManager : MonoBehaviour
 		{
 			return 0;
 		}
+		int horizontalValue = _playerKeyBoardInput.GetHorizontalValue();
+
 		return _playerKeyBoardInput.GetHorizontalValue();
 		/*if (_playerKeyBoardInput.GetHorizontalValue() != 0)
 			return _playerKeyBoardInput.GetHorizontalValue();
@@ -52,11 +54,11 @@ public class InputManager : MonoBehaviour
 
 	public bool IsJumpButtonPressed()
 	{
-        if(this._isDragging == true)
+        if(this._isDragging == true ||
+			InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.InputType.JUMP)
         {
 			return false;
         }
-
 		if (_playerKeyBoardInput.GetJumpValue() == 0 )
 			return false;
 		else

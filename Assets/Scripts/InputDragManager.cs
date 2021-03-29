@@ -8,6 +8,8 @@ public class InputDragManager : MonoBehaviour
 	public static InputDragManager instance;
 	public List<DraggableItem> draggerList;
 
+	private EnumUtility.InputType _activeDraggedItem = EnumUtility.InputType.NONE;
+
 	private void Awake()
 	{
 		if (instance == null)
@@ -22,6 +24,7 @@ public class InputDragManager : MonoBehaviour
 
 	private void OnDraggingValueChanged(bool isDragging, EnumUtility.InputType inputType)
 	{
+		_activeDraggedItem = inputType;
 		SetDraggedItem(inputType);
 	}
 
@@ -37,6 +40,10 @@ public class InputDragManager : MonoBehaviour
 		}
 	}
 
+	public EnumUtility.InputType GetActiveDraggedItem()
+	{
+		return _activeDraggedItem;
+	}
 	public void OnDragItemReachedInitialPosition()
 	{
 		for (int i = 0; i < draggerList.Count; i++)
