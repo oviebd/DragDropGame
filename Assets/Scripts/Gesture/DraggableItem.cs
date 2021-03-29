@@ -23,7 +23,7 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 
     private void Awake()
     {
-        _initialPosition = this.transform.position;
+        _initialPosition = this.transform.localPosition;
         _collider2D = this.gameObject.GetComponent<Collider2D>();
     }
 
@@ -32,6 +32,7 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 		if (_canDraggable == false)
 			return;
 
+		transform.parent = null;
         OnDraggingValueChanged?.Invoke(true,inputType);
         transform.position = eventData.pointerCurrentRaycast.worldPosition;
     }
@@ -126,11 +127,13 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 
     private void GoBackToButtonState()
     {
-        this.transform.position = _initialPosition;
         _collider2D.isTrigger = true;
         _lastCollidedObj = null;
 		InputDragManager.instance.OnDragItemReachedInitialPosition();
-    }
+		this.gameObject.transform.SetParent(InputDragManager.instance.gameObject.transform, true);
+		this.transform.localPosition = _initialPosition;
+	}
+
 
     private void GoBackToGameItemState()
     {

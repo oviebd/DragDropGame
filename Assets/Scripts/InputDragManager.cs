@@ -46,10 +46,15 @@ public class InputDragManager : MonoBehaviour
 	}
 	public void OnDragItemReachedInitialPosition()
 	{
-		_activeDraggedItem = EnumUtility.InputType.NONE;
+		
 		for (int i = 0; i < draggerList.Count; i++)
 		{
+		/*	if (draggerList[i].inputType == _activeDraggedItem)
+			{
+				draggerList[i].transform.parent = this.gameObject.transform;
+			}*/
 			draggerList[i].SetDragAbility(true);
 		}
+		_activeDraggedItem = EnumUtility.InputType.NONE;
 	}
 }
