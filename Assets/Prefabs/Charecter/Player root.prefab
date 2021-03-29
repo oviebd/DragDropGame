@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5130727756762145078}
   - component: {fileID: 5130727756762145077}
   - component: {fileID: 5130727756762145079}
+  - component: {fileID: 5938594008379981940}
   m_Layer: 8
   m_Name: Player root
   m_TagString: Untagged
@@ -238,9 +239,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15, y: -0.4}
+  m_Offset: {x: -0.14999998, y: -0.34593236}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.5459324
 --- !u!50 &5130727756762145077
 Rigidbody2D:
   serializedVersion: 4
@@ -288,6 +289,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.31, y: 1.19}
   m_EdgeRadius: 0
+--- !u!210 &5938594008379981940
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130727756762145073}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
 --- !u!1 &5130727757277120759
 GameObject:
   m_ObjectHideFlags: 0
