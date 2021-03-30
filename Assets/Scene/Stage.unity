@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -9826,16 +9826,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player root _new
-      objectReference: {fileID: 0}
-    - target: {fileID: 5667989136891748578, guid: 053cbee8619adb4429197962edaf57b0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5667989136891748578, guid: 053cbee8619adb4429197962edaf57b0,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053cbee8619adb4429197962edaf57b0, type: 3}
@@ -39612,9 +39602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputType: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!212 &7653230363878692094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39803,9 +39790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputType: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!212 &7653230365037975597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40244,9 +40228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputType: 3
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!61 &8989146122075470983
 BoxCollider2D:
   m_ObjectHideFlags: 0

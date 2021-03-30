@@ -67,8 +67,8 @@ public abstract class DraggableItem : GestureRecognizerBase
 
 		transform.parent = null;
 		OnDraggingValueChanged?.Invoke(true, inputType);
-		//transform.position = eventData.pointerCurrentRaycast.worldPosition;
-		transform.position = draggingPoint;
+		transform.position = eventData.pointerCurrentRaycast.worldPosition;
+		//transform.position = draggingPoint;
 	}
 	protected override void onEndDragging(PointerEventData eventData)
 	{
