@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
 		DraggableItem.OnDraggingValueChanged -= OnDraggingValueChanged;
 	}
 
-    private void OnDraggingValueChanged(bool isDragging,EnumUtility.InputType inputType)
+    private void OnDraggingValueChanged(bool isDragging,EnumUtility.DraggedItemType inputType)
     {
 		this._isDragging = isDragging;
     }
@@ -43,10 +43,10 @@ public class InputManager : MonoBehaviour
 			return 0;
 
 		int horizontalValue = _playerKeyBoardInput.GetHorizontalValue();
-		if (horizontalValue == 1 && InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.InputType.RIGHT)
+		if (horizontalValue == 1 && InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.DraggedItemType.RIGHT)
 			return 0;
 
-		if (horizontalValue == -1 && InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.InputType.LEFT)
+		if (horizontalValue == -1 && InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.DraggedItemType.LEFT)
 			return 0;
 
 		return _playerKeyBoardInput.GetHorizontalValue();
@@ -59,7 +59,7 @@ public class InputManager : MonoBehaviour
 	public bool IsJumpButtonPressed()
 	{
         if(this._isDragging == true ||
-			InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.InputType.JUMP)
+			InputDragManager.instance.GetActiveDraggedItem() == EnumUtility.DraggedItemType.JUMP)
         {
 			return false;
         }

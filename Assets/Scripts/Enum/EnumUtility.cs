@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnumUtility 
 {
-   public  enum InputType
+   public  enum DraggedItemType
 	{
 		NONE = 0,
 		LEFT = 1,
