@@ -9827,6 +9827,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player root _new
       objectReference: {fileID: 0}
+    - target: {fileID: 1063854294280475980, guid: 053cbee8619adb4429197962edaf57b0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b0a57b5b90cf4924cb5370130bbfd52a, type: 2}
+    - target: {fileID: 1063854294280475982, guid: 053cbee8619adb4429197962edaf57b0,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053cbee8619adb4429197962edaf57b0, type: 3}
 --- !u!1001 &905272978
