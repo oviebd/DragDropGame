@@ -26,7 +26,9 @@ public abstract class DraggableItem : GestureRecognizerBase
  
 	private bool CanDockToInitialPosition(Vector3 position)
 	{
-		float distance = Vector3.Magnitude(position - _initialPosition);
+		this.gameObject.transform.SetParent(InputDragManager.instance.gameObject.transform, true);
+		float distance =Mathf.Abs(Vector3.Distance(transform.localPosition,_initialPosition));
+		this.gameObject.transform.parent = null;
 
 		if (distance <= 1.5)
 			return true;
@@ -67,7 +69,12 @@ public abstract class DraggableItem : GestureRecognizerBase
 
 		transform.parent = null;
 		OnDraggingValueChanged?.Invoke(true, inputType);
-		transform.position = eventData.pointerCurrentRaycast.worldPosition;
+		//Debug.Log("drag pos " + eventData.pointerCurrentRaycast.worldPosition);
+		if (eventData.pointerCurrentRaycast.worldPosition != Vector3.zero)
+		{
+			transform.position = eventData.pointerCurrentRaycast.worldPosition;
+		}
+		
 		//transform.position = draggingPoint;
 	}
 	protected override void onEndDragging(PointerEventData eventData)

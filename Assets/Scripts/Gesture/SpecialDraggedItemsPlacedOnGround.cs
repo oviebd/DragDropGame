@@ -39,16 +39,18 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 
 	public Vector3 CheckRayCast()
 	{
-		Vector3 fromPosition = transform.position;
+		//this.gameObject.transform.SetParent(InputDragManager.instance.gameObject.transform, true);
+
+		Vector3 fromPosition = transform.localPosition;
 		fromPosition.y = fromPosition.y - 1.0f;
 		Vector3 direction = new Vector3(0, -100, 0);
-	//	Debug.DrawRay(fromPosition, direction, Color.green);
+		Debug.DrawRay(fromPosition, direction, Color.green);
 		RaycastHit2D hit2D = Physics2D.Raycast(fromPosition, direction);
 		if (hit2D.collider != null)
 		{
 			if(Utility.IsgameobjectIsInThisLayer(groundLayer,hit2D.collider.gameObject))
 			{
-				//	Debug.DrawRay(fromPosition, direction, Color.red);
+				Debug.DrawRay(fromPosition, direction, Color.red);
 				return hit2D.point;
 			}
 		}
