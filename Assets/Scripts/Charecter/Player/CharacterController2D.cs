@@ -129,4 +129,14 @@ public class CharacterController2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+	public float GetJumopforce()
+	{
+		return m_JumpForce;
+	}
+
+	public void SetJumpForce(float jumpForce)
+	{
+		this.m_JumpForce = jumpForce;
+	}
 }

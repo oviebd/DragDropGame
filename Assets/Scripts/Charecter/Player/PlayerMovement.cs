@@ -4,39 +4,69 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController2D controller;
-    [SerializeField] private Animator _animator;
 
-    public float runSpeed = 40f;
+	[SerializeField] private Animator _animator;
+	[SerializeField] private float hyperJumpForce = 800.0f;
+	[SerializeField] private float runSpeed = 80f;
+
+	private CharacterController2D _controller;
+    
 
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
 
-    void Update () {
+	private float _originalJumpForce;
+	private bool _isHyperJumpActivated = false;
+
+	private void Start()
+	{
+		_controller = GetComponent<CharacterController2D>();
+		_originalJumpForce = _controller.GetJumopforce();
+	}
+
+	void Update () {
+
 		horizontalMove = InputManager.instance.GetHorizontalValue();
-		jump = InputManager.instance.IsJumpButtonPressed();
+
+		if (_isHyperJumpActivated == false)
+			jump = InputManager.instance.IsJumpButtonPressed();
 
 		playAnimations();
     }
 
     void FixedUpdate ()
     {
-        // Move our character
-        controller.Move(horizontalMove * runSpeed * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
+
+        _controller.Move(horizontalMove * runSpeed * Time.fixedDeltaTime, crouch, jump);
+
+		if (_isHyperJumpActivated)
+		{
+			_isHyperJumpActivated = false;
+			_controller.SetJumpForce(_originalJumpForce);
+		}
+		jump = false;
+
     }
 
 
     void playAnimations()
     {
        // _animator.SetFloat("MoveSpeed", Mathf.Abs(horizontalMove));
-        if (controller.getIsGrounded())
+        if (_controller.getIsGrounded())
             _animator.SetFloat("MoveSpeed", Mathf.Abs(horizontalMove));
         else
             _animator.SetFloat("MoveSpeed", Mathf.Abs(0));
            
         _animator.SetBool("jump", jump);
     }
+
+	public void PerformHyperJump()
+	{
+	//	Debug.Log("Perform Hyper Jump " );
+		_isHyperJumpActivated = true;
+		_controller.SetJumpForce(hyperJumpForce);
+		jump = true;
+	}
 
 }

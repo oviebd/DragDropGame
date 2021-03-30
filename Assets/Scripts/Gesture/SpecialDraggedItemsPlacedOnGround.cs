@@ -6,11 +6,15 @@ using UnityEngine.EventSystems;
 public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 {
 	[SerializeField]
-	private LayerMask layerMask = new LayerMask();
+	private LayerMask groundLayer = new LayerMask();
+
+	[SerializeField]
+	private LayerMask playerLayer = new LayerMask();
+
 	protected override void onDragEnded(PointerEventData eventData)
 	{
 		Vector2 pos = CheckRayCast();
-		if(pos!= Vector2.zero)
+		if(pos != Vector2.zero)
 		{
 			this.transform.position = pos;
 			GoBackToGameItemState();
@@ -18,6 +22,17 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 		else
 		{
 			GoBackToButtonState();
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (Utility.IsgameobjectIsInThisLayer(playerLayer, collision.gameObject))
+		{
+			if(inputType == EnumUtility.DraggedItemType.SPRING)
+			{
+				collision.gameObject.GetComponent<PlayerManager>().OnActivateHyperJump();
+			}
 		}
 	}
 
@@ -31,7 +46,7 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 		RaycastHit2D hit2D = Physics2D.Raycast(fromPosition, direction);
 		if (hit2D.collider != null)
 		{
-			if (IsThisLayerCollidable(hit2D.collider.gameObject))
+			if(Utility.IsgameobjectIsInThisLayer(groundLayer,hit2D.collider.gameObject))
 			{
 				//	Debug.DrawRay(fromPosition, direction, Color.red);
 				return hit2D.point;
@@ -42,7 +57,7 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 
 	public bool IsThisLayerCollidable(GameObject collidedObj)
 	{
-		if ((layerMask.value & 1 << collidedObj.layer) != 0)
+		if ((groundLayer.value & 1 << collidedObj.layer) != 0)
 			return true;
 		return false;
 	}

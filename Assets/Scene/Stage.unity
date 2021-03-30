@@ -10276,6 +10276,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 914854035}
     m_Modifications:
+    - target: {fileID: 1063854294280475976, guid: 053cbee8619adb4429197962edaf57b0,
+        type: 3}
+      propertyPath: hyperJumpForce
+      value: 1600
+      objectReference: {fileID: 0}
     - target: {fileID: 1063854294280475977, guid: 053cbee8619adb4429197962edaf57b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40914,9 +40919,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputType: 4
-  layerMask:
+  groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!212 &7653230365285822049
 SpriteRenderer:
   m_ObjectHideFlags: 0
