@@ -20,10 +20,12 @@ public class StageHelper : MonoBehaviour
 
 	void Start()
 	{
-		_playerInitialPosition = GameObject.FindGameObjectWithTag(EnumUtility.Tags.PlayerInitiatlPoint.ToString());
+	
 	}
 	public PlayerManager InstantiatePlayer()
 	{
+		_playerInitialPosition = GameObject.FindGameObjectWithTag(EnumUtility.Tags.PlayerInitiatlPoint.ToString());
+
 		PlayerManager[] players = FindObjectsOfType<PlayerManager>();
 		for(int i = 0; i < players.Length; i++)
 		{

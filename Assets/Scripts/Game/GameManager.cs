@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame()
 	{
-		_stageHelper.InstantiatePlayer();
+	//	_stageHelper.InstantiatePlayer();
 	}
 
 	public void EndGame()

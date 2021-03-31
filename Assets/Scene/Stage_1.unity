@@ -10193,7 +10193,7 @@ PrefabInstance:
     - target: {fileID: 1063854294280475978, guid: 053cbee8619adb4429197962edaf57b0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053cbee8619adb4429197962edaf57b0, type: 3}
@@ -10204,10 +10204,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1033754578, guid: e2ecee06f682e6f49aad24eb4b82cd22, type: 3}
-      propertyPath: playerRootPosition
-      value: 
-      objectReference: {fileID: 914854034}
     - target: {fileID: 7795952078706433938, guid: e2ecee06f682e6f49aad24eb4b82cd22,
         type: 3}
       propertyPath: m_Name
@@ -10463,51 +10459,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1752639664}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1496636058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1496636060}
-  - component: {fileID: 1496636059}
-  m_Layer: 0
-  m_Name: Scene Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1496636059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496636058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c646695e45d95854f907572bcc14fd83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSceneNumber: 2
-  _currentScene: 1
---- !u!4 &1496636060
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496636058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514200890
 GameObject:
   m_ObjectHideFlags: 3
