@@ -5,14 +5,15 @@ using UnityEngine.EventSystems;
 
 public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 {
-	[SerializeField]
-	private LayerMask groundLayer = new LayerMask();
+	[SerializeField] private LayerMask groundLayer = new LayerMask();
+	[SerializeField] private LayerMask playerLayer = new LayerMask();
+	[SerializeField] private float maxActivatedTime = 5.0f;
 
-	[SerializeField]
-	private LayerMask playerLayer = new LayerMask();
-
+	private bool _isActivated = false;
+	private float _lastActivatedTime;
 	protected override void onDragEnded(PointerEventData eventData)
 	{
+		_isActivated = false;
 		Vector2 pos = CheckRayCast();
 		if(pos != Vector2.zero)
 		{
@@ -24,6 +25,31 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 			GoBackToButtonState();
 		}
 	}
+
+	private void Update()
+	{
+		if( _isDragging == false && _isActivated)
+		{
+			if( (Time.time - _lastActivatedTime) >= maxActivatedTime)
+			{
+				GoBackToButtonState();
+			}
+		}
+	}
+
+	protected override void GoBackToButtonState()
+	{
+		base.GoBackToButtonState();
+		_isActivated = false;
+	}
+
+	protected override void GoBackToGameItemState()
+	{
+		base.GoBackToGameItemState();
+		_lastActivatedTime = Time.time;
+		_isActivated = true;
+	}
+
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

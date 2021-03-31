@@ -9,6 +9,7 @@ namespace Utils.Gesture
         float dx;
         float dy;
         Vector3 newPos;
+		protected bool _isDragging = false;
 
         protected abstract void onDragging(Vector3 draggingPoint, PointerEventData eventData);
 		protected abstract void onDraggingStarted(PointerEventData eventData);
@@ -30,13 +31,14 @@ namespace Utils.Gesture
 			dx = eventData.pointerPressRaycast.worldPosition.x - transform.position.x;
             dy = eventData.pointerPressRaycast.worldPosition.y - transform.position.y;
 
+			_isDragging = true;
 			onDraggingStarted(eventData);
 		}
 
         public void OnDrag(PointerEventData eventData)
         {
-           // SetCurrentPosition(eventData);
-
+			// SetCurrentPosition(eventData);
+			_isDragging = true;
             if (eventData.pointerCurrentRaycast.worldPosition.x == 0 || eventData.pointerCurrentRaycast.worldPosition.y == 0)
             {
             }
@@ -52,6 +54,7 @@ namespace Utils.Gesture
 
         public void OnEndDrag(PointerEventData eventData)
         {
+			_isDragging = false;
 			onEndDragging(eventData);
 	    	//Debug.Log("UNITY>> End Drag - " + eventData.pointerPressRaycast.worldPosition);
 		}

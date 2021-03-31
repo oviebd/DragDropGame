@@ -41,7 +41,7 @@ public abstract class DraggableItem : GestureRecognizerBase
 		_canDraggable = canDrag;
 	}
 
-    protected void GoBackToButtonState()
+    protected virtual void GoBackToButtonState()
     {
         _collider2D.isTrigger = true;
 		InputDragManager.instance.OnDragItemReachedInitialPosition();
@@ -49,7 +49,7 @@ public abstract class DraggableItem : GestureRecognizerBase
 		this.transform.localPosition = _initialPosition;
 	}
 
-    protected void GoBackToGameItemState()
+    protected virtual void  GoBackToGameItemState()
     {
         _collider2D.isTrigger = false;
     }
