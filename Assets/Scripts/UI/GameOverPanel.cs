@@ -26,7 +26,7 @@ public class GameOverPanel : AnimatorPanel
 
 	public void ShowGameOverMessage()
 	{
-		messageText.text = "You Died ! \nPlease Try Again";
+		messageText.text = "Game Over ! \nTry Again";
 	}
 
 	public void OnRestartGameButtonClicked()
