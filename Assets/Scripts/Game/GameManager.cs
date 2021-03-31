@@ -41,6 +41,6 @@ public class GameManager : MonoBehaviour
 
 	public void OnLevelCompleted()
 	{
-		//_sceneManagerHelper.LoadnextLevel();
+		_sceneManagerHelper.LoadnextLevel();
 	}
 }
