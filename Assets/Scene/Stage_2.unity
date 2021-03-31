@@ -31506,6 +31506,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1973144992}
     m_Modifications:
+    - target: {fileID: 2431270686313414769, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431270686512725592, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.6400003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431270686525275374, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.64
+      objectReference: {fileID: 0}
     - target: {fileID: 8989146122079648673, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_Name
@@ -31565,6 +31580,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989146122126909720, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989146122126909733, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 220082995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989146122126909733, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989146122408564589, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.6400003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989146123668380606, guid: f7586a5f5acba78419408a1f80ac2946,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7586a5f5acba78419408a1f80ac2946, type: 3}
@@ -32394,7 +32434,7 @@ GameObject:
   - component: {fileID: 1973144992}
   - component: {fileID: 1973144991}
   m_Layer: 0
-  m_Name: Blank
+  m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
