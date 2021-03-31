@@ -48,6 +48,7 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 		}
 		if (_isDragging)
 		{
+			CheckRayCast();
 			remainingUseNumberText.enabled = false;
 		}
 	}
@@ -113,13 +114,16 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 
 		Vector3 fromPosition = transform.localPosition;
 		fromPosition.y = fromPosition.y - 1.0f;
-		Vector3 direction = new Vector3(0, -100, 0);
+		Vector3 direction = new Vector3(0, -1000, 0);
 		Debug.DrawRay(fromPosition, direction, Color.green);
 		RaycastHit2D hit2D = Physics2D.Raycast(fromPosition, direction);
 		if (hit2D.collider != null)
 		{
-			if(Utility.IsgameobjectIsInThisLayer(groundLayer,hit2D.collider.gameObject))
+			Debug.DrawRay(fromPosition, direction, Color.yellow);
+			Debug.Log(hit2D.collider.name);
+			if (Utility.IsgameobjectIsInThisLayer(groundLayer,hit2D.collider.gameObject))
 			{
+			
 				Debug.DrawRay(fromPosition, direction, Color.red);
 				return hit2D.point;
 			}
