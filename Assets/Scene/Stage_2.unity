@@ -10319,26 +10319,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletDirection.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletDirection.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletSpawnDelay
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff290d0cf06d0b4e84de68b6aa1c088, type: 3}
 --- !u!4 &793855441 stripped
@@ -74068,31 +74048,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletDirection.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletDirection.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletSpawnDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611051, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff290d0cf06d0b4e84de68b6aa1c088, type: 3}
 --- !u!1001 &1263594017
@@ -74110,12 +74065,12 @@ PrefabInstance:
     - target: {fileID: 2431270685958269374, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2431270685958269374, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49000072
+      value: 3.8800006
       objectReference: {fileID: 0}
     - target: {fileID: 2431270686313414769, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
@@ -74130,22 +74085,22 @@ PrefabInstance:
     - target: {fileID: 2431270686512725592, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1899996
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2431270686512725592, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2431270686525275374, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.19
+      value: -8.799999
       objectReference: {fileID: 0}
     - target: {fileID: 2431270686525275374, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7653230365234901952, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
@@ -74155,12 +74110,12 @@ PrefabInstance:
     - target: {fileID: 7653230365234901952, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7653230365234901952, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49000072
+      value: 3.8800006
       objectReference: {fileID: 0}
     - target: {fileID: 8989146122079648673, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
@@ -74245,22 +74200,22 @@ PrefabInstance:
     - target: {fileID: 8989146122408564589, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1899996
+      value: -3.7999997
       objectReference: {fileID: 0}
     - target: {fileID: 8989146122408564589, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8989146123668380606, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.19
+      value: -8.799999
       objectReference: {fileID: 0}
     - target: {fileID: 8989146123668380606, guid: f7586a5f5acba78419408a1f80ac2946,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7586a5f5acba78419408a1f80ac2946, type: 3}
@@ -74838,26 +74793,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gun 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletDirection.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletDirection.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014985101911611050, guid: 2ff290d0cf06d0b4e84de68b6aa1c088,
-        type: 3}
-      propertyPath: bulletSpawnDelay
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff290d0cf06d0b4e84de68b6aa1c088, type: 3}
