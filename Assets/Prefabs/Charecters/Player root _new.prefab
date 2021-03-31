@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5667989136898936578}
-  hyperJumpForce: 1600
+  hyperJumpForce: 1200
   runSpeed: 80
 --- !u!58 &1063854294280475981
 CircleCollider2D:
@@ -109,9 +109,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11515784, y: 0.33}
+  m_Offset: {x: 0.11515784, y: 0.25952715}
   serializedVersion: 2
-  m_Radius: 0.4901095
+  m_Radius: 0.56058234
 --- !u!50 &1063854294280475982
 Rigidbody2D:
   serializedVersion: 4
