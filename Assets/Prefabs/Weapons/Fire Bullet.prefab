@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5ab2133fba69a40844e1172d6de73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damegeAmount: 10
+  damegeAmount: 100
   graphicsObj: {fileID: 7915402149572885142}
 --- !u!58 &7915402149825256268
 CircleCollider2D:

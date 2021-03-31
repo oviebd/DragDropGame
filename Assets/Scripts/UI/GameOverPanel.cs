@@ -21,12 +21,12 @@ public class GameOverPanel : AnimatorPanel
 
 	public void ShowLevelCompleteMessage()
 	{
-		messageText.text = "Congratulations ! /n You have CCompleted all Levels";
+		messageText.text = "Congratulations ! \n You have CCompleted all Levels";
 	}
 
 	public void ShowGameOverMessage()
 	{
-		messageText.text = "You Died ! /nPlease Try Again";
+		messageText.text = "You Died ! \nPlease Try Again";
 	}
 
 	public void OnRestartGameButtonClicked()
