@@ -12,4 +12,17 @@ public class EnumUtility
 		JUMP = 3,
 		SPRING =4
 	}
+
+	public enum Scenes
+	{
+		NONE = 0,
+		Stage_1 = 1,
+		Stage_2 = 2
+	}
+
+	public enum Tags
+	{
+		NONE = 0,
+		PlayerInitiatlPoint = 1
+	}
 }

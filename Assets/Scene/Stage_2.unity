@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 516942321}
   m_Layer: 0
   m_Name: Player initial Position
-  m_TagString: Untagged
+  m_TagString: PlayerInitiatlPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10032,6 +10032,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1033754578, guid: e2ecee06f682e6f49aad24eb4b82cd22, type: 3}
+      propertyPath: playerRootPosition
+      value: 
+      objectReference: {fileID: 516942320}
     - target: {fileID: 7795952078706433938, guid: e2ecee06f682e6f49aad24eb4b82cd22,
         type: 3}
       propertyPath: m_Name
