@@ -1006,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516942320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8, y: -0.02, z: 0}
+  m_LocalPosition: {x: -1.2, y: 2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1362912202}
@@ -10362,6 +10362,10 @@ PrefabInstance:
       propertyPath: playerRootPosition
       value: 
       objectReference: {fileID: 516942320}
+    - target: {fileID: 1496636059, guid: e2ecee06f682e6f49aad24eb4b82cd22, type: 3}
+      propertyPath: _currentScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1877318395, guid: e2ecee06f682e6f49aad24eb4b82cd22, type: 3}
       propertyPath: startGamePanel
       value: 
@@ -74353,7 +74357,7 @@ PrefabInstance:
     - target: {fileID: 1063854294280475978, guid: 053cbee8619adb4429197962edaf57b0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1063854294280475983, guid: 053cbee8619adb4429197962edaf57b0,
         type: 3}
@@ -74510,7 +74514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651528799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9399999, y: 1.1800001, z: -15.375}
+  m_LocalPosition: {x: -1.34, y: 3.4, z: -15.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 544291736}
@@ -74613,7 +74617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729079906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9399999, y: 1.1800001, z: -15.375}
+  m_LocalPosition: {x: -1.34, y: 3.4, z: -15.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75071,11 +75075,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5090885348353459702, guid: faeedfa643af8d24aa784dbd2b576d75,
-        type: 3}
-      propertyPath: m_Text
-      value: Ready
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faeedfa643af8d24aa784dbd2b576d75, type: 3}

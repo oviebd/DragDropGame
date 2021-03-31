@@ -28,10 +28,10 @@ public class PlayerManager : MonoBehaviour
 	public void OnPlayerDie()
 	{
 		_gameManager.EndGame();
-		Invoke("DieEffect",0.5f);
+		Invoke("DstroyPlayer", 0.5f);
 	}
 
-	private void DieEffect()
+	public void DstroyPlayer()
 	{
 		Destroy(this.gameObject);
 	}

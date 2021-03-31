@@ -21,7 +21,7 @@ public class GameOverPanel : AnimatorPanel
 
 	public void ShowLevelCompleteMessage()
 	{
-		messageText.text = "Congratulations ! \n You have CCompleted all Levels";
+		messageText.text = "Congratulations ! ";
 	}
 
 	public void ShowGameOverMessage()

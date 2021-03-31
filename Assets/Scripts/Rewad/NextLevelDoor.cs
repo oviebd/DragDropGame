@@ -9,6 +9,7 @@ public class NextLevelDoor : MonoBehaviour
 	{
 		if (Utility.IsgameobjectIsInThisLayer(playerLayer, collision.gameObject))
 		{
+			collision.gameObject.GetComponent < PlayerManager>().DstroyPlayer();
 			GameManager.instance.OnLevelCompleted();
 		}
 	}
