@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
 		_stageHelper = StageHelper.instance;
 		_sceneManagerHelper = SceneManagerHelper.instance;
 		_uiManager = UIManager.instance;
-
-		StartGame();
 	}
 
 	public void StartInitialStage()
@@ -33,7 +31,7 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame()
 	{
-	//	_stageHelper.InstantiatePlayer();
+		_stageHelper.InstantiatePlayer();
 	}
 
 	public void EndGame()

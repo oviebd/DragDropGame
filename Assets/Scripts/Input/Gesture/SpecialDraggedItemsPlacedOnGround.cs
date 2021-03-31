@@ -70,7 +70,6 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 		base.GoBackToGameItemState();
 		_lastActivatedTime = Time.time;
 		_isActivated = true;
-		_useNumber = _useNumber + 1;
 
 		remainingUseNumberText.enabled = false;
 	}
@@ -102,6 +101,7 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 		{
 			if(inputType == EnumUtility.DraggedItemType.SPRING)
 			{
+				_useNumber = _useNumber + 1;
 				collision.gameObject.GetComponent<PlayerManager>().OnActivateHyperJump();
 			}
 		}
@@ -123,7 +123,6 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 			//Debug.Log(hit2D.collider.name);
 			if (Utility.IsgameobjectIsInThisLayer(groundLayer,hit2D.collider.gameObject))
 			{
-			
 				Debug.DrawRay(fromPosition, direction, Color.red);
 				return hit2D.point;
 			}
