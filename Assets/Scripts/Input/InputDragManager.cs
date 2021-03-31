@@ -17,6 +17,11 @@ public class InputDragManager : MonoBehaviour
 
 		DraggableItem.OnDraggingValueChanged += OnDraggingValueChanged;
 	}
+
+	private void Start()
+	{
+		this.gameObject.transform.SetParent(Camera.main.gameObject.transform, true);
+	}
 	private void OnDestroy()
 	{
 		DraggableItem.OnDraggingValueChanged -= OnDraggingValueChanged;
