@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 {
 	[SerializeField] private LayerMask groundLayer = new LayerMask();
 	[SerializeField] private LayerMask playerLayer = new LayerMask();
 	[SerializeField] private float maxActivatedTime = 5.0f;
+	[SerializeField] private int maxUseNumber = 3;
+	[SerializeField] private Color disableColor;
+	[SerializeField] private Text remainingUseNumberText;
 
+	private int _useNumber = 0;
 	private bool _isActivated = false;
 	private float _lastActivatedTime;
+
+	private void Start()
+	{
+		_useNumber = 0;
+		ShowRemainingText();
+	}
 	protected override void onDragEnded(PointerEventData eventData)
 	{
 		_isActivated = false;
@@ -35,12 +46,22 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 				GoBackToButtonState();
 			}
 		}
+		if (_isDragging)
+		{
+			remainingUseNumberText.enabled = false;
+		}
 	}
 
 	protected override void GoBackToButtonState()
 	{
 		base.GoBackToButtonState();
 		_isActivated = false;
+		if(_useNumber >= maxUseNumber)
+			MadeItemDisable();
+		else
+			MadeItemEnabled();
+
+		ShowRemainingText();
 	}
 
 	protected override void GoBackToGameItemState()
@@ -48,8 +69,31 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 		base.GoBackToGameItemState();
 		_lastActivatedTime = Time.time;
 		_isActivated = true;
+		_useNumber = _useNumber + 1;
+
+		remainingUseNumberText.enabled = false;
 	}
 
+	private void ShowRemainingText()
+	{
+		int remaining = maxUseNumber - _useNumber;
+		if (remaining < 0)
+			remaining = 0;
+
+		remainingUseNumberText.enabled = true;
+		remainingUseNumberText.text = remaining + "";
+	}
+
+	private void MadeItemDisable()
+	{
+		this.gameObject.GetComponent<SpriteRenderer>().color = disableColor;
+		_collider2D.enabled = false;
+	}
+	private void MadeItemEnabled()
+	{
+		this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+		_collider2D.enabled = true;
+	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -89,5 +133,4 @@ public class SpecialDraggedItemsPlacedOnGround : DraggableItem
 			return true;
 		return false;
 	}
-
 }

@@ -13,7 +13,7 @@ public abstract class DraggableItem : GestureRecognizerBase
 	private bool _canDraggable = true;
 
     private Vector3 _initialPosition;
-    private Collider2D _collider2D;
+    protected Collider2D _collider2D;
 
 	protected abstract void onDragEnded(PointerEventData eventData);
 
