@@ -19,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
 	private float _originalJumpForce;
 	private bool _isHyperJumpActivated = false;
 
+	private AudioSource _audioSource;
+
 	private void Start()
 	{
 		_controller = GetComponent<CharacterController2D>();
 		_originalJumpForce = _controller.GetJumopforce();
+		_audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update () {
@@ -37,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate ()
     {
+		if (jump)
+		{
+			_audioSource.Play();
+		}
 
         _controller.Move(horizontalMove * runSpeed * Time.fixedDeltaTime, crouch, jump);
 
