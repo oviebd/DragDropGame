@@ -18,6 +18,11 @@ public class SceneManagerHelper : MonoBehaviour
 			instance = this;
 	}
 
+	public void LoadFirstScene()
+	{
+		_currentScene = EnumUtility.Scenes.Stage_1;
+		LoadScene(_currentScene);
+	}
 
 	public void ReLoadCurrentScene()
 	{
@@ -56,5 +61,13 @@ public class SceneManagerHelper : MonoBehaviour
 		if (sceneNumber <= maxSceneNumber && sceneNumber >= 1)
 			return true;
 		return false;
+	}
+
+	public bool IsAllLevelCompleted()
+	{
+		if (IsSceneExist((int)_currentScene + 1) == true)
+			return false;
+
+		return true;
 	}
 }

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
 	StageHelper _stageHelper;
 	SceneManagerHelper _sceneManagerHelper;
+	UIManager _uiManager;
 
 	private void Awake()
 	{
@@ -20,8 +21,14 @@ public class GameManager : MonoBehaviour
 	{
 		_stageHelper = StageHelper.instance;
 		_sceneManagerHelper = SceneManagerHelper.instance;
+		_uiManager = UIManager.instance;
 
 		StartGame();
+	}
+
+	public void StartInitialStage()
+	{
+		_sceneManagerHelper.LoadFirstScene();
 	}
 
 	public void StartGame()
@@ -31,16 +38,22 @@ public class GameManager : MonoBehaviour
 
 	public void EndGame()
 	{
-		RestartGame();
+		_uiManager.ShowGameOverMenu();
 	}
 
 	public void RestartGame()
 	{
-		//_sceneManagerHelper.ReLoadCurrentScene();
+		_sceneManagerHelper.ReLoadCurrentScene();
 	}
 
 	public void OnLevelCompleted()
 	{
-		_sceneManagerHelper.LoadnextLevel();
+		if (_sceneManagerHelper.IsAllLevelCompleted() == false)
+		{
+			_sceneManagerHelper.LoadnextLevel();
+		}
+		else
+			EndGame();
+		
 	}
 }
