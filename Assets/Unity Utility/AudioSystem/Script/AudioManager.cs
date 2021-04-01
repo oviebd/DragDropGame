@@ -12,11 +12,15 @@ public class AudioManager : MonoBehaviour
 
     private string soundSettingJsonFileName = "GameSoundSettingData.json";
 
+    private IAudio _backgroundAudio;
+
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
+
+		_backgroundAudio = this.GetComponent<IAudio>();
     }
 
    
@@ -45,4 +49,14 @@ public class AudioManager : MonoBehaviour
     {
         return SaveDataHandler.GetData<GameAudioSavedData>(GetFilePath(), new GameAudioSavedData());
     }
+
+	public void PlayBackgroundSound()
+	{
+		_backgroundAudio.PlaySound();
+	}
+
+	public void PlayPlayerJumpAudio()
+	{
+
+	}
 }

@@ -20,7 +20,7 @@ public class StageHelper : MonoBehaviour
 
 	void Start()
 	{
-	
+		AudioManager.instance.PlayBackgroundSound();
 	}
 	public PlayerManager InstantiatePlayer()
 	{

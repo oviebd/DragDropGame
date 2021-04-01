@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float runSpeed = 80f;
 
 	private CharacterController2D _controller;
-    
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -19,13 +18,13 @@ public class PlayerMovement : MonoBehaviour
 	private float _originalJumpForce;
 	private bool _isHyperJumpActivated = false;
 
-	private AudioSource _audioSource;
+	private PlayerManager _playerManager;
 
 	private void Start()
 	{
 		_controller = GetComponent<CharacterController2D>();
 		_originalJumpForce = _controller.GetJumopforce();
-		_audioSource = GetComponent<AudioSource>();
+		_playerManager = GetComponent<PlayerManager>();
 	}
 
 	void Update () {
@@ -40,9 +39,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate ()
     {
-		if (jump)
+		if (jump && _controller.getIsGrounded())
 		{
-			_audioSource.Play();
+			_playerManager.PlayJumpAudio();
 		}
 
         _controller.Move(horizontalMove * runSpeed * Time.fixedDeltaTime, crouch, jump);

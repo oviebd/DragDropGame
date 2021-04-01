@@ -6,9 +6,13 @@ using Cinemachine;
 public class PlayerManager : MonoBehaviour
 {
 	[SerializeField] private GameObject playerSprite;
+	[SerializeField] private AudioClip jumpClip;
 
 	private PlayerMovement _playerMovement;
 	private GameManager _gameManager;
+
+	private IAudio _playerAudio;
+
 
 	private void Awake()
 	{
@@ -18,6 +22,7 @@ public class PlayerManager : MonoBehaviour
 	private void Start()
 	{
 		_gameManager = GameManager.instance;
+		_playerAudio = GetComponent<IAudio>();
 	}
 
 	public void OnActivateHyperJump()
@@ -34,6 +39,11 @@ public class PlayerManager : MonoBehaviour
 	public void DstroyPlayer()
 	{
 		Destroy(this.gameObject);
+	}
+
+	public void PlayJumpAudio()
+	{
+		_playerAudio.PlaySound(jumpClip);
 	}
 
 	public GameObject GetPlayerSprite()

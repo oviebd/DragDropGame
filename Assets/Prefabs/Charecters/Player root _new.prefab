@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1272471522727030507}
   - component: {fileID: 617248754}
   - component: {fileID: 28419411}
+  - component: {fileID: 1446316586}
   m_Layer: 11
   m_Name: Player root _new
   m_TagString: Untagged
@@ -200,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 5667989136891657410}
+  jumpClip: {fileID: 8300000, guid: 9648e49e272200248993ffb2011248a3, type: 3}
 --- !u!82 &28419411
 AudioSource:
   m_ObjectHideFlags: 0
@@ -210,7 +212,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9648e49e272200248993ffb2011248a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -218,7 +220,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 25
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -296,6 +298,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1446316586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063854294280475978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c41c6fa811d24181810871af8753cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 9648e49e272200248993ffb2011248a3, type: 3}
+  _isBackgroundSound: 0
 --- !u!1 &1063854294725999756
 GameObject:
   m_ObjectHideFlags: 0

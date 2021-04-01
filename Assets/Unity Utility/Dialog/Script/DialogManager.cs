@@ -6,8 +6,8 @@ public class DialogManager : MonoBehaviour
 {
     public static DialogManager instance;
 
-    [Header("Dialog Spawn Parent")]
-    [SerializeField] private GameObject _dialogParent;
+  //  [Header("Dialog Spawn Parent")]
+    private GameObject _dialogParent;
     [Header("Dialog Prefab List (Dialog Base Type)")]
     [SerializeField] private List<DialogBase> _dialogPrefabList;
 
@@ -17,8 +17,13 @@ public class DialogManager : MonoBehaviour
             instance = this;
     }
 
-    #region Public Api
-    public void SpawnDialogBasedOnDialogType(DialogTypeEnum.DialogType type,DialogClass dialogClass)
+	private void Start()
+	{
+		_dialogParent = FindObjectOfType<Canvas>().gameObject;
+	}
+
+	#region Public Api
+	public void SpawnDialogBasedOnDialogType(DialogTypeEnum.DialogType type,DialogClass dialogClass)
     {
         GameObject dialogObj = GetSpecificDialogBasedOnType(type);
         if (dialogObj != null)
